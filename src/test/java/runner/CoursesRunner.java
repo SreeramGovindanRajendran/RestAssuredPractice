@@ -55,6 +55,7 @@ public class CoursesRunner {
         for(int i=0;i<coursesNumber;i++){
             String CourseTitle=js2.getString("["+i+"].title");
             int CoursePrice=js2.getInt("["+i+"].price");
+            int CourseCopies=js2.getInt("["+i+"].copies");
             System.out.println("Title :"+CourseTitle);
             System.out.println("Price :"+CoursePrice);
 
@@ -65,7 +66,7 @@ public class CoursesRunner {
             }
 
         //Verify if Sum of all Course prices matches with Purchase Amount
-            sumOfPrices+=CoursePrice;
+            sumOfPrices+=CoursePrice*CourseCopies;
         }
 
         Assert.assertEquals(totalAmount,sumOfPrices);
