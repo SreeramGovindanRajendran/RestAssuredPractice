@@ -2,8 +2,8 @@ package samplejson;
 
 public class GoogleMapJSON {
 
-    public static String JSONbody(){
-        return  "{\n" +
+    public static String JSONbody() {
+        return "{\n" +
                 "  \"location\": {\n" +
                 "    \"lat\": -38.383494,\n" +
                 "    \"lng\": 33.427362\n" +

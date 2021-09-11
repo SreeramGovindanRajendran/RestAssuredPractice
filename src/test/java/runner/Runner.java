@@ -5,13 +5,16 @@ import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import samplejson.DBJSON;
+import samplejson.GoogleMapJSON;
 import utils.JSONUtility;
+
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
+import static org.hamcrest.Matchers.equalTo;
 
 public class Runner {
 
-    /*@Test
+    @Test
     public void validateGoogleMapPost(){
         RestAssured.baseURI="https://rahulshettyacademy.com";
         given().
@@ -27,15 +30,15 @@ public class Runner {
                 log().
                 all();
     }
-*/
+
     @Test
-    public void validateLocalJSONGet(){
-        RestAssured.baseURI="http://localhost:3000";
+    public void validateLocalJSONGet() {
+        RestAssured.baseURI = "http://localhost:3000";
         given().
                 body(DBJSON.JSONPostBody()).
-        when().
+                when().
                 get("places").
-        then().
+                then().
                 assertThat().
                 statusCode(200).
                 log().
@@ -43,14 +46,14 @@ public class Runner {
     }
 
     @Test
-    public void validateLocalJSONPost(){
-        RestAssured.baseURI="http://localhost:3000";
+    public void validateLocalJSONPost() {
+        RestAssured.baseURI = "http://localhost:3000";
         given().
-                header("content-Type","application/json").
+                header("content-Type", "application/json").
                 body(DBJSON.JSONPostBody()).
-        when().
+                when().
                 post("places").
-        then().
+                then().
                 assertThat().
                 statusCode(201).
                 log().
@@ -58,14 +61,14 @@ public class Runner {
     }
 
     @Test
-    public void validateLocalJSONPut(){
-        RestAssured.baseURI="http://localhost:3000";
+    public void validateLocalJSONPut() {
+        RestAssured.baseURI = "http://localhost:3000";
         given().
-                header("content-Type","application/json").
+                header("content-Type", "application/json").
                 body(DBJSON.JSONPutBody()).
-        when().
+                when().
                 put("places/7").
-        then().
+                then().
                 assertThat().
                 statusCode(200).
                 log().
@@ -87,39 +90,39 @@ public class Runner {
     }*/
 
     @Test
-    public void validateLocalJSONDelete(){
-        RestAssured.baseURI="http://localhost:3000";
-        for(int i=6; i<=6; i++){
+    public void validateLocalJSONDelete() {
+        RestAssured.baseURI = "http://localhost:3000";
+        for (int i = 6; i <= 6; i++) {
             when().
-                   delete("places/"+i).
-                   // delete("places/2").
-            then().
+                    delete("places/" + i).
+                    // delete("places/2").
+                            then().
                     assertThat().
                     statusCode(200).log().all();
         }
     }
 
     @Test
-    public void validateLocalJSON(){
-        RestAssured.baseURI="http://localhost:3000";
+    public void validateLocalJSON() {
+        RestAssured.baseURI = "http://localhost:3000";
 
         given().
-                header("content-Type","application/json").
+                header("content-Type", "application/json").
                 body(DBJSON.JSONPostBody()).
-        when().
+                when().
                 post("places").
-        then().
+                then().
                 assertThat().
                 statusCode(201);
 
         JsonPath js1 = JSONUtility.jsonConverter(DBJSON.JSONPostBody());
 
-        String actualCountry=js1.get("country");
+        String actualCountry = js1.get("country");
 
         String Place = given().
-            when().
+                when().
                 get("places/17").
-        then().
+                then().
                 extract().response().asString();
 
         JsonPath js = JSONUtility.jsonConverter(Place);
