@@ -1,0 +1,106 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "places": [
+    {
+      "id": 1,
+      "country": "India",
+      "author": "Delhi"
+    },
+    {
+      "id": 2,
+      "country": "USA",
+      "author": "Chicago"
+    },
+    {
+      "id": 3,
+      "country": "UK",
+      "author": "London"
+    },
+    {
+      "id": 4,
+      "country": "Australia",
+      "author": "Melbourne"
+    },
+    {
+      "id": 5,
+      "country": "Japan",
+      "author": "Tokyo"
+    },
+    {
+      "id": 7,
+      "country": "France",
+      "author": "Paris"
+    },
+    {
+      "id": 6,
+      "country": "Chennai",
+      "author": "Srivi"
+    },
+    {
+      "id": 8,
+      "country": "India",
+      "author": "Sree"
+    },
+    {
+      "id": 9,
+      "country": "France",
+      "author": "Paris"
+    },
+    {
+      "id": 10,
+      "country": "Japan",
+      "author": "Tokyo"
+    },
+    {
+      "id": 11,
+      "country": "Berlin",
+      "author": "Italy"
+    },
+    {
+      "id": 12,
+      "country": "France",
+      "author": "Paris"
+    },
+    {
+      "id": 13,
+      "country": "Japan",
+      "author": "Tokyo"
+    },
+    {
+      "id": 14,
+      "country": "Berlin",
+      "author": "Italy"
+    },
+    {
+      "id": 15,
+      "country": "France",
+      "author": "Paris"
+    },
+    {
+      "id": 16,
+      "country": "Japan",
+      "author": "Tokyo"
+    },
+    {
+      "id": 17,
+      "country": "Berlin",
+      "author": "Italy"
+    }
+  ]
+}
